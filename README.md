@@ -120,3 +120,76 @@ winner = away_team
 else:
 winner = "Draw"
 ```
+
+# 📁 Module 3: Functions ✅
+
+Turning repeated logic from Module 1 (variables) and Module 2 (conditionals)
+into reusable, callable functions.
+
+---
+
+## 🎯 Key Concepts
+
+- Defining functions with `def`
+- Parameters and return values
+- Calling one function from inside another
+- Breaking a big script into small, testable pieces
+
+---
+
+## 📜 Scripts
+
+| File                    | Theme             | What it practices                                                                     |
+| ----------------------- | ----------------- | ------------------------------------------------------------------------------------- |
+| `goal_calculator.py`    | ⚽ Premier League | Functions for points, goal difference, and season form, combined into one team report |
+| `sushi_roll_counter.py` | 🍣 Sushi          | Functions for tracking roll inventory and revenue                                     |
+
+---
+
+## 💡 Example
+
+Before (Module 2 style — logic repeated inline):
+
+```python
+points = (wins * 3) + draws
+goal_diff = goals_scored - goals_conceded
+```
+
+After (Module 3 style — logic wrapped in reusable functions):
+
+```python
+def calculate_points(wins, draws):
+    return (wins * 3) + draws
+
+def calculate_goal_difference(goals_scored, goals_conceded):
+    return goals_scored - goals_conceded
+
+points = calculate_points(26, 7)
+goal_diff = calculate_goal_difference(71, 27)
+```
+
+The win: `calculate_points()` can now be reused for _any_ team, any
+number of times, without retyping the math.
+
+---
+
+## 🏆 Sample Output
+
+```
+========================================
+⚽ ARSENAL — SEASON REPORT
+========================================
+Matches played: 38
+Record: 26W - 7D - 5L
+Points: 85
+Goal difference: +44
+Status: title contenders 🏆
+========================================
+```
+
+---
+
+## ⏭️ Next: Module 4 — Loops & Iteration
+
+Repeating this logic across a _list_ of teams instead of calling the
+function once per team.
